@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="myBooks"
-            type="com.client.soulstudio.data.model.Books" />
+            type="com.client.soulstudio.data.model.VolumeInfo" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -17,6 +19,36 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="@{myBooks.title}"
+                app:layout_constraintStart_toEndOf="@+id/imgThumb"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="this is the title" />
+
+            <ImageView
+                android:id="@+id/imgThumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="15dp"
+                android:text="TextView"
+                app:layout_constraintStart_toEndOf="@+id/imgThumb"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
