@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/drawable/content_cell_bg.xml" value="0.2351851851851852" />
+        <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/drawable/header_cell_bg.xml" value="0.2351851851851852" />
         <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/layout/fragment_main.xml" value="0.176" />
         <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/layout/item_books.xml" value="0.176" />
         <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/layout/list_books.xml" value="0.25" />
+        <entry key="..\:/Users/Mohsen/Desktop/Android/SoulStudio/app/src/main/res/layout/table_list_item.xml" value="0.264" />
       </map>
     </option>
   </component>

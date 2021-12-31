@@ -3,10 +3,8 @@ package com.client.soulstudio.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.client.soulstudio.data.model.Books
 import com.client.soulstudio.data.model.Item
-import com.client.soulstudio.data.model.VolumeInfo
-import com.client.soulstudio.databinding.ItemBooksBinding
+import com.client.soulstudio.databinding.TableListItemBinding
 import javax.inject.Inject
 
 class MainAdapter @Inject constructor(
@@ -14,7 +12,7 @@ class MainAdapter @Inject constructor(
     private var books = ArrayList<Item>()
 
     inner class MyViewHolder(
-        private val binding: ItemBooksBinding
+        private val binding: TableListItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(myBooks: Item) {
             binding.myBooks = myBooks
@@ -25,7 +23,7 @@ class MainAdapter @Inject constructor(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemBinding =
-            ItemBooksBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            TableListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(itemBinding)
     }
 

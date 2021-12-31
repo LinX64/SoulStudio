@@ -54,7 +54,6 @@ class MainFragment : Fragment() {
             when (it.status) {
                 SUCCESS -> {
                     binding.progressBar.gone()
-                    binding.recyclerView.scheduleLayoutAnimation()
 
                     it.data?.let { result -> setList(result) }
                     binding.recyclerView.visible()
