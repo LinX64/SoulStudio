@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.client.soulstudio.data.model.VolumeInfo
+import com.client.soulstudio.data.model.Item
 import com.client.soulstudio.databinding.FragmentMainBinding
 import com.client.soulstudio.ui.adapter.MainAdapter
 import com.client.soulstudio.ui.viewmodel.MainViewModel
@@ -56,17 +56,7 @@ class MainFragment : Fragment() {
                     binding.progressBar.gone()
                     binding.recyclerView.scheduleLayoutAnimation()
 
-                    it.data?.let { result ->
-                        val myList = mutableListOf<String>()
-
-                        result.forEach {
-                            myList.add(it.volumeInfo.title)
-                            // checking to see if we can get the data from server
-
-
-                        }
-
-                    }
+                    it.data?.let { result -> setList(result) }
                     binding.recyclerView.visible()
                 }
                 LOADING -> {
@@ -83,7 +73,7 @@ class MainFragment : Fragment() {
         })
     }
 
-    private fun setList(myBooks: List<VolumeInfo>) {
+    private fun setList(myBooks: List<Item>) {
         mAdapter.setData(myBooks)
     }
 
