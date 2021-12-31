@@ -4,17 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.client.soulstudio.data.model.Books
+import com.client.soulstudio.data.model.VolumeInfo
 import com.client.soulstudio.databinding.ItemBooksBinding
 import javax.inject.Inject
 
 class MainAdapter @Inject constructor(
 ) : RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
-    private var books = ArrayList<Books>()
+    private var books = ArrayList<VolumeInfo>()
 
     inner class MyViewHolder(
         private val binding: ItemBooksBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(myBooks: Books) {
+        fun bind(myBooks: VolumeInfo) {
             binding.myBooks = myBooks
             binding.executePendingBindings()
 
@@ -33,4 +34,8 @@ class MainAdapter @Inject constructor(
         holder.bind(books[position])
     }
 
+    fun setData(list: List<VolumeInfo>) {
+        books.clear()
+        books.addAll(list)
+    }
 }

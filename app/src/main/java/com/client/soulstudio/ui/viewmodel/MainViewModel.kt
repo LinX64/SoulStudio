@@ -19,7 +19,7 @@ class MainViewModel @Inject constructor(
         try {
             //TODO Check for internet connection later...
 
-            emit(Resource.success(data = mainRep.getBooks()))
+            emit(Resource.success(data = mainRep.getBooks().items))
 
         } catch (e: Exception) {
             emit(Resource.error(data = null, message = e.message ?: "Error Occurred!"))

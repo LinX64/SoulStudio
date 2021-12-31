@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.client.soulstudio.data.model.VolumeInfo
 import com.client.soulstudio.databinding.FragmentMainBinding
 import com.client.soulstudio.ui.adapter.MainAdapter
 import com.client.soulstudio.ui.viewmodel.MainViewModel
@@ -38,9 +39,16 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupUI()
+        observer()
     }
 
     private fun setupUI() {
+
+        mAdapter = MainAdapter()
+        binding.recyclerView.adapter = mAdapter
+    }
+
+    private fun observer() {
         mainViewModel.getBooks().observe(requireActivity(), {
 
             when (it.status) {
@@ -48,8 +56,15 @@ class MainFragment : Fragment() {
                     binding.progressBar.gone()
                     binding.recyclerView.scheduleLayoutAnimation()
 
-                    it.data?.let { results ->
+                    it.data?.let { result ->
+                        val myList = mutableListOf<String>()
 
+                        result.forEach {
+                            myList.add(it.volumeInfo.title)
+                            // checking to see if we can get the data from server
+
+
+                        }
 
                     }
                     binding.recyclerView.visible()
@@ -67,4 +82,9 @@ class MainFragment : Fragment() {
             }
         })
     }
+
+    private fun setList(myBooks: List<VolumeInfo>) {
+        mAdapter.setData(myBooks)
+    }
+
 }
